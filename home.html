@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        hr {
+            margin: 40px auto;
+            width: 80%;
+        }
+        video {
+            display: none;
+            width: 80%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton">Colours</button>
+    <button id="videoButton">Video Dolby Atmos</button>
+    <hr>
+    <video id="dolbyVideo" controls>
+        <source src="your-video-file.mp4" type="video/mp4"> <!-- Replace with your Dolby Atmos video file -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Navigate to index.html when the "Colours" button is clicked
+        const colorButton = document.getElementById('colorButton');
+        colorButton.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Redirect to index.html
+        });
+
+        // Play Dolby Atmos video button
+        const videoButton = document.getElementById('videoButton');
+        const dolbyVideo = document.getElementById('dolbyVideo');
+        videoButton.addEventListener('click', () => {
+            dolbyVideo.style.display = 'block';
+            dolbyVideo.play();
+        });
+    </script>
+</body>
+</html>
